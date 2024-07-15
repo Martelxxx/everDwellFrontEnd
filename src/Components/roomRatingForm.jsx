@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './roomRatingForm.css';
 
 const rooms = [
   "entrance", "living room", "kitchen", "dining room", "bathroom", "bedroom", "bedroom1", "bedroom2", "bedroom3", "bedroom4",
@@ -14,7 +15,11 @@ const ratings = [
   { value: 5, label: "Perfect, absolutely nothing to change" }
 ];
 
-const RoomRatingForm = ({ onSubmit }) => {
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
   const [ratingsState, setRatingsState] = useState(
     rooms.reduce((acc, room) => {
       acc[room] = { active: false, rating: 0 };
@@ -49,18 +54,20 @@ const RoomRatingForm = ({ onSubmit }) => {
   const isNextEnabled = Object.values(ratingsState).some(room => room.active);
 
   return (
-    <div>
+    <div className="roomRatingForm">
       <form onSubmit={handleSubmit}>
         {rooms.map((room) => (
-          <div key={room}>
-            <label>
-              <input
-                type="checkbox"
-                checked={ratingsState[room].active}
-                onChange={() => handleCheckChange(room)}
-              />
-              {room}
-            </label>
+          <div key={room} className="roomInputs">
+            <div className="roomInputWrapper">
+              <div className="checkboxContainer">
+                <input
+                  type="checkbox"
+                  checked={ratingsState[room].active}
+                  onChange={() => handleCheckChange(room)}
+                />
+              </div>
+              <div className="roomName">{capitalizeFirstLetter(room)}</div>
+            </div>
             {ratingsState[room].active && (
               <select
                 value={ratingsState[room].rating}
