@@ -1,24 +1,30 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './homePage.css';
 
 const HomePage = () => {
+    const navigate = useNavigate();
   return (
     <div className="homePage">
-      <h1>Welcome to EverDwell</h1>
-
+        <div className="header">
+      <p>📝Welcome to EverDwell🏡</p>
+      <div className="buttons">
+      <button onClick={() => navigate('/buyer')}>Rate Now!</button>
+      <button onClick={() => navigate('/buyer-list')}>Ratings</button>
+      </div>
+      </div>
       <div className="section headline">
+        <div className="headline-text">
         <h2>Your Ultimate Home Rating Solution</h2>
+        <p>🏠</p>
         <p>Find and rate your dream home with EverDwell. Our platform helps you evaluate different aspects of homes to ensure you make the best choice.</p>
+        <p>⭐️</p>
+        </div>
       </div>
 
       <div className="section subheading">
         <h2>Why Choose EverDwell?</h2>
         <p>Discover the benefits of using our comprehensive home rating system and how it can simplify your home search process.</p>
-      </div>
-
-      <div className="section vsl">
-        <h2>Video Introduction</h2>
-        <p>Watch our brief video to learn how EverDwell works and how it can help you find the perfect home.</p>
       </div>
 
       <div className="section cta">
@@ -72,7 +78,11 @@ const HomePage = () => {
         <h2>Contact Us</h2>
         <p>Have more questions? Get in touch with our team.</p>
       </div>
+      <footer>
+          © 2023 Your Company Name
+        </footer>
     </div>
+    
   );
 }
 

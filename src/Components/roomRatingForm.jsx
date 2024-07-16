@@ -54,7 +54,9 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
   const isNextEnabled = Object.values(ratingsState).some(room => room.active);
 
   return (
+    <>
     <div className="roomRatingForm">
+    <h4>Rate Your Home</h4>
       <form onSubmit={handleSubmit}>
         {rooms.map((room) => (
           <div key={room} className="roomInputs">
@@ -85,6 +87,10 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
         {isNextEnabled && <button type="submit">Next</button>}
       </form>
     </div>
+    {/* <footer style={{ position: 'fixed', bottom: 0, width: '100%', height: '6.5%', textAlign: 'center', padding: '10px', backgroundColor: '#f9f3e9' }}>
+    © 2023 Your Company Name
+  </footer> */}
+    </>
   );
 };
 

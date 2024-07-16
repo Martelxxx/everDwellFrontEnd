@@ -29,12 +29,13 @@ const App = () => {
 
     if (response.ok) {
       setMessage('Buyer created successfully!');
-      setBuyerData(null);
-      navigate('/');
+      setTimeout(() => setMessage(''), 3000); // Clear message after 3 seconds
+      navigate('/buyer', { state: { buyer } }); // Navigate to /buyer with buyer data
     } else {
       const errorData = await response.json();
-      console.error('Failed to create buyer:', errorData);  // Log the error response
+      console.error('Failed to create buyer:', errorData); // Log the error response
       setMessage(`Failed to create buyer: ${JSON.stringify(errorData)}`);
+      setTimeout(() => setMessage(''), 3000); // Clear message after 3 seconds
     }
   };
 
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/buyer-list" element={<BuyerList />} />
       </Routes>
       {message && <p>{message}</p>}
+      
     </Router>
   );
 };
@@ -120,7 +122,6 @@ const RoomRatingWrapper = ({ buyerData, onRatingSubmit }) => {
 
   const handleRatingSubmit = async (rating) => {
     await onRatingSubmit(rating);
-
     navigate('/buyer');
   };
 

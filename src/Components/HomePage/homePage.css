@@ -1,35 +1,65 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    background-image: url('../../assets/homebg.png');
+    background-size: contain; /* Change from cover to contain to fit the image to the screen without stretching */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background image fixed during scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
+}
   
   .homePage {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 99%;
     padding: 20px;
-    background-color: #f5f5f5;
+    margin: 0 auto;
+    margin-top: 80px; /* Adjust this value to control the distance from the top */
+    /* background: rgba(234, 221, 202, 0.4); 
+    backdrop-filter: blur(10px);  */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
-  
-  h1 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 6.5%;
     text-align: center;
+    padding: 10px;
+    background-color: #f9f3e9;
+    display: none; /* Initially hidden */
   }
   
+  /* h1 {
+    font-size: 2rem;
+    color: #333;    
+    margin-bottom: 20px;
+    text-align: center;
+  } */
+
+  /* @media (max-width: 1160px) and (max-height: 788px) { */
+    h1 {
+      font-size: 2rem;
+      color: white;    
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  /* } */
+  
   .section {
+    text-align: center;
+    justify-content: center;
     width: 100%;
     max-width: 800px;
     padding: 20px;
     margin: 20px 0;
-    background-color: #fff;
-    border-radius: 10px;
+    background: rgba(234, 221, 202, 0.8); 
+    backdrop-filter: blur(10px); 
+    /* border-radius: 10px; */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
@@ -47,11 +77,14 @@ body {
   
   .cta {
     text-align: center;
-    background-color: #e0d5c4; /* Slightly darker beige */
+    background: rgba(205, 127, 50, 0.8); 
+    backdrop-filter: blur(10px); 
+    width: 100%;
   }
   
   .social-proof {
-    background-color: #e0e5e5; /* Slightly different color for variety */
+    background: rgba(194, 178, 128, 0.8); 
+    backdrop-filter: blur(10px); 
   }
   
   .benefits {
@@ -63,9 +96,43 @@ body {
   .benefits p {
     margin: 0;
     padding: 10px;
-    background-color: #f9f3e9; /* Light beige */
+    background: rgba(196, 164, 132, 0.8); 
+    backdrop-filter: blur(10px); 
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    font-size: 1.5rem;
+    color: #5a463a; /* Warm brown color */
+    font-weight: bold;
+  }
+
+  .buttons {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #D2B48C; /* Warm brown color */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;;
+  }
+
+  button {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #5a463a; /* Warm brown color */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 25%;
+    transition: background-color 0.3s;
   }
   
   /* Media queries for larger screens */
@@ -74,7 +141,7 @@ body {
       width: 80%;
       margin: 0 auto;
       padding: 40px;
-      background-color: #ffffff; /* White background for a more website-like feel */
+      /* background-image: ; */
     }
   
     .section {
@@ -103,3 +170,7 @@ body {
     }
   }
   
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet');
+  }

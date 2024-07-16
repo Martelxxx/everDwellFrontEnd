@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const BuyerList = () => {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -27,6 +28,23 @@ const BuyerList = () => {
     }
   };
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8000/api/buyers/${id}/`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setResults(results.filter((entry) => entry.id !== id));
+        setMessage('Entry deleted successfully.');
+      } else {
+        setMessage('Failed to delete entry.');
+      }
+    } catch (error) {
+      console.error('Error deleting entry:', error);
+      setMessage('Error deleting entry.');
+    }
+  };
+
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     return new Date(dateString).toLocaleString(undefined, options);
@@ -41,37 +59,54 @@ const BuyerList = () => {
     }).format(value);
   };
 
+  const getNextSteps = (rating) => {
+    if (rating >= 0 && rating < 1) {
+      return "🚫 This home does not meet your needs. Consider looking for entirely different options.";
+    } else if (rating >= 1 && rating < 2) {
+      return "👎 This home is too small. Look for larger homes that can accommodate your requirements.";
+    } else if (rating >= 2 && rating < 3) {
+      return "⚠️ This home has an acceptable size but is missing key features. Consider looking for homes with the necessary features.";
+    } else if (rating >= 3 && rating < 4) {
+      return "👍 This home has a good size and acceptable features. You may want to explore similar homes.";
+    } else if (rating >= 4 && rating < 5) {
+      return "👌 This home is very good all around. It might be worth a second look.";
+    } else if (rating > 4.99) {
+      return "🌟 This home is perfect. You should seriously consider making an offer.";
+    } else {
+      return "❓ Invalid rating.";
+    }
+  };
+
   return (
-    <div>
-      <h2>Search For Your Ratings</h2>
-      <div className="buyerForm">
-      <form onSubmit={handleSearch}>
-        <div className='inputs'>
-          <label>Phone:</label>
-          <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-        </div>
-        <div className='inputs'>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </div>
-        <button type="submit">Search</button>
-      </form>
+    <div className='search'>
+      <div className="searchForm">
+      <h3>🔎 Search For Your Ratings 📈</h3>
+        <form onSubmit={handleSearch}>
+          <div className='inputs'>
+            <label>Phone:</label>
+            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+          </div>
+          <div className='inputs'>
+            <label>Email:</label>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </div>
+          <button type="submit">Search</button>
+        </form>
       </div>
       {message && <p>{message}</p>}
       {results.length > 0 && (
-        <div>
+        <div className='results'>
           <h2>Results</h2>
           <ul>
             {results.map((entry) => (
               <li key={entry.id}>
-                {/* <p>Name: {entry.name}</p> */}
-                {/* <p>Email: {entry.email}</p> */}
-                {/* <p>Phone: {entry.phone}</p> */}
                 <div className="results">
-                <h4>{entry.address}</h4>
-                <p>Budget: {formatCurrency(entry.budget)}</p>
-                <p>Home Rating: {entry.homeRating}</p>
-                <p>Date: {formatDate(entry.created_at)}</p>
+                  <h4>{entry.address}</h4>
+                  <p>Budget: {formatCurrency(entry.budget)}</p>
+                  <p>Home Rating: {entry.homeRating}</p>
+                  <p>Next Steps: {getNextSteps(entry.homeRating)}</p>
+                  <p>Date: {formatDate(entry.created_at)}</p>
+                  <button onClick={() => handleDelete(entry.id)}>Delete</button>
                 </div>
               </li>
             ))}
