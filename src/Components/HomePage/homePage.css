@@ -1,6 +1,7 @@
 body {
     font-family: 'Quicksand', sans-serif;
     background-image: url('../../assets/homebg.png');
+    background-color: #f9f3e9;
     background-size: contain; /* Change from cover to contain to fit the image to the screen without stretching */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
@@ -152,6 +153,12 @@ body {
       margin: 2% auto;
       padding: 40px;
       /* background-image: ; */
+      background-color: white;
+      background-image: url('../../assets/homebg.png');
+        background-size: contain; /* Change from cover to contain to fit the image to the screen without stretching */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the background image */
+        background-attachment: fixed; /* Keep the background image fixed in place */
     }
 
     .contain {

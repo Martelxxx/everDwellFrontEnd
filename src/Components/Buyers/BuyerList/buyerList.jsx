@@ -81,6 +81,7 @@ const BuyerList = () => {
     <div className='search'>
       <div className="searchForm">
       <h3>🔎 Search For Your Ratings 📈</h3>
+      <p className='small'>Find Ratings that you completed on other homes!</p>
         <form onSubmit={handleSearch}>
           <div className='inputs'>
             <label>Phone: 📞</label>
@@ -90,6 +91,9 @@ const BuyerList = () => {
             <label>Email: 📧</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
+          <p className='verySmall'>We prioritize your privacy at EverDwell. Your personal information is protected with top security measures and is never shared for marketing purposes.
+
+Read our privacy policy for details.</p>
           <button type="submit">Search</button>
         </form>
       </div>

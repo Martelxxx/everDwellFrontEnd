@@ -138,6 +138,7 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
           )}
         </h3>
         <form onSubmit={homeRating !== null ? handleSubmit : handleNext}>
+          <p className='small'>Fill in the below information and start the search for your new home!</p>
           <div className="inputs">
             <label>Name: 🪪</label>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
@@ -151,28 +152,30 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
             <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </div>
           <div className="inputs">
-            <label>Pre-Approval:</label>
-            <label>
-              <input
-                type="radio"
-                name="preapproval"
-                value="true"
-                checked={preapproval === true}
-                onChange={() => setPreapproval(true)}
-              />
-              Yes
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="preapproval"
-                value="false"
-                checked={preapproval === false}
-                onChange={() => setPreapproval(false)}
-              />
-              No
-            </label>
-          </div>
+  <label>Pre-Approval: 🤔</label>
+  <div className="radio-group">
+    <label>
+      <input
+        type="radio"
+        name="preapproval"
+        value="true"
+        checked={preapproval === true}
+        onChange={() => setPreapproval(true)}
+      />
+      Yes ✔️
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="preapproval"
+        value="false"
+        checked={preapproval === false}
+        onChange={() => setPreapproval(false)}
+      />
+      No ❌
+    </label>
+  </div>
+</div>
           <div className="inputs">
             <label>Budget: 💰</label>
             <input type="text" value={budget} onChange={(e) => setBudget(e.target.value)} />
@@ -183,9 +186,11 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
           </div>
           {homeRating !== null && (
             <div className="inputs">
+                <div className='flash'>
               <label>{address} Rating:</label>
               <input type="text" value={parseFloat(homeRating).toFixed(2)} readOnly />
               <p>Next Steps: {getNextSteps(parseFloat(homeRating))}</p>
+            </div>
             </div>
           )}
           <button className="btn1">{homeRating !== null ? 'Save Result' : 'Next'}</button>
