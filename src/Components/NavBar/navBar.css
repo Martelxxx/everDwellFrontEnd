@@ -2,11 +2,20 @@ body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
   }
+
+  .logo {
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5a463a; /* Warm brown color */
+    text-decoration: none;
+  }
   
   .navbar {
     background-color: #f9f3e9; /* Warm, light beige color */
     /* padding: 1rem; */
-    height: 4.4rem;
+    height: 3.4rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     position: fixed; /* Changed from relative to fixed */
     z-index: 1000;
@@ -20,7 +29,7 @@ body {
   
   .navbar-header {
     display: flex;
-    margin-left: 5%;
+    margin-right: 5%;
     justify-content: space-between;
     align-items: center;
   }
@@ -77,6 +86,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'popins', sans-serif;
   }
   
   .navbar-link::after {
@@ -118,6 +128,19 @@ body {
     transition: max-height 0.3s ease-in-out;
   }
 
+  .navbar-title {
+    display: none
+  }
+
+  .logo {
+    height: 60px;
+    width: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5a463a; /* Warm brown color */
+    text-decoration: none;
+  }
+
   .navbar-list.open {
     max-height: 300px; /* Adjust based on the number of items */
   }
@@ -142,7 +165,13 @@ body {
   .navbar-toggle {
     display: none; /* Hide toggle button on large screens */
   }
-}
+
+  .navbar-title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bolder;
+  }
+
 
 .logout-link {
   cursor: pointer;
@@ -151,6 +180,7 @@ body {
 }
 .logout-link:hover {
   color: #3a2d24;
+}
 }
   
 @font-face {

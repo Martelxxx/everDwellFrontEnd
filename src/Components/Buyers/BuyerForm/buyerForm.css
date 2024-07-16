@@ -53,11 +53,12 @@ body {
     align-items: flex-start;
     margin-bottom: 1rem;
     width: 100%;
+    font-weight: lighter;
   }
   
   .inputs label {
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    /* font-weight: bolder; */
   }
   
   .inputs input[type="text"],
@@ -115,3 +116,56 @@ body {
   button[type="submit"]:hover {
     background-color: #3a2d24; /* Darker brown on hover */
   }
+
+  .verySmall {
+    font-size: 0.5rem;
+    /* font-weight: lighter; */
+    color: red;
+    text-align: center;
+    gap: 2px;
+  }
+
+/* Media queries for larger screens */
+@media (min-width: 1160px) and (min-height: 788px) {
+
+body {
+    background-color: white;
+}
+
+    .buyerForm {
+        width: 50%;
+        height: auto;
+        padding: 20px;
+        top: 50%;
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+    .searchForm {
+        width: 50%;
+        height: auto;
+        margin: 10%;
+        padding: 40px;
+        top: 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        /* font-weight: lighter; */
+      }
+
+      .btn1 {
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 14px;
+        background-color: #5a463a; /* Warm brown color */
+        color: #fff;
+        width: 33%;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+}

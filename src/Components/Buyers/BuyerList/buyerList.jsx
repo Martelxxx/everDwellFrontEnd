@@ -83,11 +83,11 @@ const BuyerList = () => {
       <h3>🔎 Search For Your Ratings 📈</h3>
         <form onSubmit={handleSearch}>
           <div className='inputs'>
-            <label>Phone:</label>
+            <label>Phone: 📞</label>
             <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required />
           </div>
           <div className='inputs'>
-            <label>Email:</label>
+            <label>Email: 📧</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
           <button type="submit">Search</button>

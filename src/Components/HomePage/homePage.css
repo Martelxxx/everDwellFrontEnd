@@ -23,6 +23,11 @@ body {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
   }
 
+  h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+  }
+
   footer {
     position: fixed;
     bottom: 0;
@@ -112,36 +117,48 @@ body {
     display: flex;
     width: 100%;
     justify-items: center;
-    gap: 10px;
+    gap: 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
     background-color: #D2B48C; /* Warm brown color */
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;;
+    transition: background-color 0.3s;
   }
 
   button {
     padding: 0.7rem 1.5rem;
     border: none;
-    border-radius: 4px;
-    background-color: #5a463a; /* Warm brown color */
+    background-color: #5a463a;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
     width: 100%;
-    border-radius: 25%;
+    border-radius: 25px;
     transition: background-color 0.3s;
   }
   
   /* Media queries for larger screens */
   @media (min-width: 1160px) and (min-height: 788px) {
+
+    body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #f9f3e9;
+    }
+
     .homePage {
       width: 80%;
-      margin: 0 auto;
+      margin: 2% auto;
       padding: 40px;
       /* background-image: ; */
+    }
+
+    .contain {
+        border: 1px solid #ccc;
+        padding: 15px;
+        background: rgba(234, 221, 202, 0.4); 
+        backdrop-filter: blur(10px); 
     }
   
     .section {

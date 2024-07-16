@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './roomRatingForm.css';
 
-const rooms = [
-  "entrance", "living room", "kitchen", "dining room", "bathroom", "bedroom", "bedroom1", "bedroom2", "bedroom3", "bedroom4",
-  "bathroom1", "bathroom2", "room", "room1", "room2", "room3", "room4", "room5", "basement", "garage", "yard"
-];
+const rooms = {
+  commonAreas: ["entrance", "living room", "kitchen", "dining room"],
+  bathrooms: ["bathroom", "bathroom1", "bathroom2", "bathroom3", "bathroom4", "bathroom5"],
+  bedrooms: ["bedroom", "bedroom1", "bedroom2", "bedroom3", "bedroom4"],
+  other: ["room", "room1", "room2", "room3", "room4", "room5", "basement", "garage", "yard"]
+};
 
 const ratings = [
   { value: 0, label: "Does not meet needs" },
@@ -21,7 +23,7 @@ const capitalizeFirstLetter = (string) => {
 
 const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
   const [ratingsState, setRatingsState] = useState(
-    rooms.reduce((acc, room) => {
+    Object.values(rooms).flat().reduce((acc, room) => {
       acc[room] = { active: false, rating: 0 };
       return acc;
     }, {})
@@ -55,43 +57,49 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
 
   return (
     <>
-    <div className="roomRatingForm">
-    <h4>Rate Your Home</h4>
-      <form onSubmit={handleSubmit}>
-        {rooms.map((room) => (
-          <div key={room} className="roomInputs">
-            <div className="roomInputWrapper">
-              <div className="checkboxContainer">
-                <input
-                  type="checkbox"
-                  checked={ratingsState[room].active}
-                  onChange={() => handleCheckChange(room)}
-                />
-              </div>
-              <div className="roomName">{capitalizeFirstLetter(room)}</div>
+      <div className="roomRatingForm">
+        <h4>Rate Your Home</h4>
+        <form onSubmit={handleSubmit}>
+          {Object.entries(rooms).map(([category, roomList]) => (
+            <div key={category} className="roomCategory">
+              <h5>{capitalizeFirstLetter(category)}</h5>
+              {roomList.map((room) => (
+                <div key={room} className="roomInputs">
+                  <div className="roomInputWrapper">
+                    <div className="checkboxContainer">
+                      <input
+                        type="checkbox"
+                        checked={ratingsState[room].active}
+                        onChange={() => handleCheckChange(room)}
+                      />
+                    </div>
+                    <div className="roomName">{capitalizeFirstLetter(room)}</div>
+                  </div>
+                  {ratingsState[room].active && (
+                    <select
+                      value={ratingsState[room].rating}
+                      onChange={(e) => handleRatingChange(room, parseInt(e.target.value, 10))}
+                    >
+                      {ratings.map((rating) => (
+                        <option key={rating.value} value={rating.value}>
+                          {rating.label}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+              ))}
             </div>
-            {ratingsState[room].active && (
-              <select
-                value={ratingsState[room].rating}
-                onChange={(e) => handleRatingChange(room, parseInt(e.target.value, 10))}
-              >
-                {ratings.map((rating) => (
-                  <option key={rating.value} value={rating.value}>
-                    {rating.label}
-                  </option>
-                ))}
-              </select>
-            )}
-          </div>
-        ))}
-        {isNextEnabled && <button type="submit">Next</button>}
-      </form>
-    </div>
-    {/* <footer style={{ position: 'fixed', bottom: 0, width: '100%', height: '6.5%', textAlign: 'center', padding: '10px', backgroundColor: '#f9f3e9' }}>
-    © 2023 Your Company Name
-  </footer> */}
+          ))}
+          {isNextEnabled && <button type="submit">Next</button>}
+        </form>
+      </div>
+      {/* <footer style={{ position: 'fixed', bottom: 0, width: '100%', height: '6.5%', textAlign: 'center', padding: '10px', backgroundColor: '#f9f3e9' }}>
+      © 2023 Your Company Name
+    </footer> */}
     </>
   );
 };
 
 export default RoomRatingForm;
+

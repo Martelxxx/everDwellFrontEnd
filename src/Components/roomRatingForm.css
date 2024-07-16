@@ -1,96 +1,209 @@
-
-
 .roomRatingForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 100vh;
-  padding: 20px;
-  background: rgba(234, 221, 202, 0.4); 
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    background: rgba(234, 221, 202, 0.4); 
     backdrop-filter: blur(10px); 
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  overflow-y: auto;
-  margin-top: 80px; /* Adjust this value based on the height of your navbar */
-}
-
-.inputs,
-.roomInputs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  width: 100%;
-}
-
-.inputs label,
-.roomInputs label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
-.inputs input[type="text"],
-.inputs input[type="email"],
-.inputs input[type="radio"],
-.roomInputs input[type="checkbox"],
-.roomInputs select {
-  width: 80%;
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.roomInputs {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.roomInputs label {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.roomInputs label input[type="checkbox"] {
-  margin-right: 10px;
-}
-
-.roomInputs select {
-  margin-top: 10px;
-  width: calc(100% - 20px); /* Ensure the select box aligns with the text inputs */
-}
-
-.roomInputWrapper {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.checkboxContainer {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-
-.roomName {
-  flex-grow: 1;
-}
-
-button[type="submit"] {
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  background-color: #5a463a; /* Warm brown color */
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-  background-color: #3a2d24; /* Darker brown on hover */
-}
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 0;
+  }
+  
+  .roomCategory {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .inputs,
+  .roomInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .inputs label,
+  .roomInputs label {
+    margin-bottom: 0.5rem;
+    font-weight: lighter;
+  }
+  
+  .inputs input[type="text"],
+  .inputs input[type="email"],
+  .inputs input[type="radio"],
+  .roomInputs input[type="checkbox"],
+  .roomInputs select {
+    width: 80%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .roomInputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .roomInputs label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .roomInputs label input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  .roomInputs select {
+    margin-top: 10px;
+    width: calc(100% - 20px); /* Ensure the select box aligns with the text inputs */
+  }
+  
+  .roomInputWrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .checkboxContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .roomName {
+    flex-grow: 1;
+  }
+  
+  button[type="submit"] {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #5a463a; /* Warm brown color */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3a2d24; /* Darker brown on hover */
+  }
+  
+  /* Media queries for larger screens */
+  @media (min-width: 1160px) and (min-height: 788px) {
+    .roomRatingForm {
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: auto;
+        background: rgba(234, 221, 202, 0.4); 
+        backdrop-filter: blur(10px); 
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 0;
+      }
+      
+      .roomCategory {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      
+      .inputs,
+      .roomInputs {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        width: 100%;
+      }
+      
+      .inputs label,
+      .roomInputs label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+      }
+      
+      .inputs input[type="text"],
+      .inputs input[type="email"],
+      .inputs input[type="radio"],
+      .roomInputs input[type="checkbox"],
+      .roomInputs select {
+        width: 80%;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      
+      .roomInputs {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      .roomInputs label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      
+      .roomInputs label input[type="checkbox"] {
+        margin-right: 10px;
+      }
+      
+      .roomInputs select {
+        margin-top: 10px;
+        width: calc(100% - 20px); /* Ensure the select box aligns with the text inputs */
+      }
+      
+      .roomInputWrapper {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+      }
+      
+      .checkboxContainer {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+      
+      .roomName {
+        flex-grow: 1;
+      }
+      
+      button[type="submit"] {
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #5a463a; /* Warm brown color */
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      button[type="submit"]:hover {
+        background-color: #3a2d24; /* Darker brown on hover */
+      }
+  }
+  

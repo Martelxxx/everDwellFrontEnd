@@ -139,15 +139,15 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
         </h3>
         <form onSubmit={homeRating !== null ? handleSubmit : handleNext}>
           <div className="inputs">
-            <label>Name:</label>
+            <label>Name: 🪪</label>
             <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <div className="inputs">
-            <label>Email:</label>
+            <label>Email: 📧</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="inputs">
-            <label>Phone:</label>
+            <label>Phone: 📞</label>
             <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
           </div>
           <div className="inputs">
@@ -174,11 +174,11 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
             </label>
           </div>
           <div className="inputs">
-            <label>Budget:</label>
+            <label>Budget: 💰</label>
             <input type="text" value={budget} onChange={(e) => setBudget(e.target.value)} />
           </div>
           <div className="inputs">
-            <label>Future Address:</label>
+            <label>Future Address: 🏠</label>
             <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
           </div>
           {homeRating !== null && (
@@ -188,14 +188,18 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
               <p>Next Steps: {getNextSteps(parseFloat(homeRating))}</p>
             </div>
           )}
-          <button type="submit">{homeRating !== null ? 'Save Result' : 'Next'}</button>
+          <button className="btn1">{homeRating !== null ? 'Save Result' : 'Next'}</button>
         </form>
         {submitMessage && <p>{submitMessage}</p>}
         {showViewRatingsButton && (
           <button onClick={() => navigate('/buyer-list')}>View All Ratings</button>
         )}
+        <p className='verySmall'>Your privacy is our priority. We protect your data with top security measures and never share it with third parties for marketing. You can update or delete your information anytime.
+
+Read our full privacy policy for details.
+
+Thank you for trusting EverDwell.</p>
       </div>
-  
       {message && <p>{message}</p>}
       
       {/* {matchedEntries.length > 0 && (

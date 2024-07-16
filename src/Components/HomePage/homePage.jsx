@@ -6,11 +6,13 @@ const HomePage = () => {
     const navigate = useNavigate();
   return (
     <div className="homePage">
+        <div className="contain">
         <div className="header">
-      <p>📝Welcome to EverDwell🏡</p>
+      <h2>📝Welcome to EverDwell🏡</h2>
       <div className="buttons">
       <button onClick={() => navigate('/buyer')}>Rate Now!</button>
       <button onClick={() => navigate('/buyer-list')}>Ratings</button>
+      </div>
       </div>
       </div>
       <div className="section headline">
