@@ -19,7 +19,7 @@ const App = () => {
   const handleFinalSubmit = async (buyer, navigate) => {
     console.log('Submitting buyer data:', buyer);  // Log the data being submitted
 
-    const response = await fetch('http://localhost:8000/api/buyers/', {
+    const response = await fetch('http://44.204.232.236:8000/api/buyers/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const App = () => {
 
   const fetchMatchedEntries = async (phone) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/buyers/by_phone/?phone=${phone}`);
+      const response = await fetch(`http://44.204.232.236:8000/api/buyers/by_phone/?phone=${phone}`);
       const data = await response.json();
       setMatchedEntries(data);
     } catch (error) {

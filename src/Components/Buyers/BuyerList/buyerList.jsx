@@ -10,7 +10,7 @@ const BuyerList = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/api/buyers/search/?phone=${phone}&email=${email}`);
+      const response = await fetch(`http://44.204.232.236:8000/api/buyers/search/?phone=${phone}&email=${email}`);
       if (response.ok) {
         const data = await response.json();
         setResults(data);
@@ -30,7 +30,7 @@ const BuyerList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/buyers/${id}/`, {
+      const response = await fetch(`http://44.204.232.236:8000/api/buyers/${id}/`, {
         method: 'DELETE',
       });
       if (response.ok) {

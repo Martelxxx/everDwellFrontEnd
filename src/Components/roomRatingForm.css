@@ -1,21 +1,23 @@
 .roomRatingForm {
-    position: absolute;
-    top: 85%;
+    position: relative; /* Ensure it stays in the page flow */
+    /* top: 0%; */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: auto;
+    /* max-height: 90vh; Ensure it doesn't exceed viewport height */
+    overflow-y: auto; /* Makes the form scrollable */
     background: rgba(234, 221, 202, 0.4); 
     backdrop-filter: blur(10px); 
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: 7%;
-  }
+    margin-top: 25%; /* Adjust margin-top to provide spacing from top */
+    margin-bottom: 5%; /* Ensure there's space at the bottom */
+}
   
   .roomCategory {
     width: 100%;
