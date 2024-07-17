@@ -3,8 +3,8 @@ import './roomRatingForm.css';
 
 const rooms = {
   commonAreas: ["entrance", "living room", "kitchen", "dining room"],
-  bathrooms: ["bathroom", "bathroom1", "bathroom2", "bathroom3", "bathroom4", "bathroom5"],
-  bedrooms: ["bedroom", "bedroom1", "bedroom2", "bedroom3", "bedroom4"],
+  bathrooms: ["Primary bathroom", "bathroom1", "bathroom2", "bathroom3", "bathroom4", "bathroom5"],
+  bedrooms: ["Primary bedroom", "bedroom1", "bedroom2", "bedroom3", "bedroom4"],
   other: ["room", "room1", "room2", "room3", "room4", "room5", "basement", "garage", "yard"]
 };
 
@@ -59,6 +59,7 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
     <>
       <div className="roomRatingForm">
         <h4>🏠💬⭐ Rate Your Home ⭐💬🏠</h4>
+        <p className="small">Rate each room in your home to get an overall rating. Scroll to bottom once done!</p>
         <form onSubmit={handleSubmit}>
           {Object.entries(rooms).map(([category, roomList]) => (
             <div key={category} className="roomCategory">
@@ -67,7 +68,7 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
                 {category === 'commonAreas' && "Rate the common areas of your home, such as the living room, kitchen, and dining room."}
                 {category === 'bathrooms' && "Rate the bathrooms in your home."}
                 {category === 'bedrooms' && "Rate the bedrooms in your home."}
-                {category === 'other' && "Others can include offices, extra bedrooms, bathrooms beyond the usual allotment, basements, garages, and yards."}
+                {category === 'other' && "Others can include offices, media rooms, home gyms, extra bedrooms, bathrooms beyond the usual allotment, basements, garages, and yards."}
               </div>
               <br></br>
               {roomList.map((room) => (
