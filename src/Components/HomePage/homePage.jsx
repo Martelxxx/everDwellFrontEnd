@@ -19,14 +19,17 @@ const HomePage = () => {
                 <div className="headline-text">
                     <h2>Your Ultimate Home Rating Solution</h2>
                     <p>🏠</p>
-                    <p>Find and rate your dream home with EverDwell. Our platform helps you evaluate different aspects of homes to ensure you make the best choice.</p>
+                    <p>Rate your dream home with EverDwell. Our platform helps you evaluate different aspects of homes to ensure you make the best and most objective choice.</p>
                     <p>⭐️</p>
                 </div>
             </div>
     
             <div className="section subheading">
-                <h2>🔍 Why Choose EverDwell?</h2>
-                <p>Discover the benefits of using our comprehensive home rating system and how it can simplify your home search process.</p>
+                <h2>🔍 How It Works</h2>
+                <p>EverDwell helps you rate your home, giving it a score between 0 and 5. No home ever gets a 5, but if it does, drop everything and make an offer! Find and rate your dream home with EverDwell.</p>
+                <div className="buttons2">
+                    <button onClick={() => navigate('/buyer')}>Get Started Now!</button>
+                    </div>
             </div>
     
             <div className="section cta">
