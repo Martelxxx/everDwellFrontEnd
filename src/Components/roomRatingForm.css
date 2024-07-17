@@ -14,7 +14,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: 0;
+    margin-top: 7%;
   }
   
   .roomCategory {
@@ -115,12 +115,12 @@
         justify-content: center;
         width: 50%;
         height: auto;
-        background: rgba(234, 221, 202, 0.4); 
-        backdrop-filter: blur(10px); 
+        background: rgba(250, 250, 250, 0.8); 
+        backdrop-filter: blur(10px);  
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
-        margin-top: 0;
+        margin-top: 7%;
       }
       
       .roomCategory {

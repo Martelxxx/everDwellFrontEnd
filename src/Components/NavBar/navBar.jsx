@@ -23,13 +23,13 @@ const NavBar = () => {
       <div className='navbar-title'>EverDwell</div>
       <ul className={`navbar-list ${menuOpen ? 'open' : ''}`}>
         <li className="navbar-item">
-          <Link to="/" className="navbar-link" onClick={toggleMenu}>Main Page</Link>
+          <Link to="/" className="navbar-link" onClick={toggleMenu}>Home</Link>
         </li>
         <li className="navbar-item">
-          <Link to="/buyer" className="navbar-link" onClick={toggleMenu}>New Home</Link>
+          <Link to="/buyer" className="navbar-link" onClick={toggleMenu}>New Rating</Link>
         </li>
         <li className="navbar-item">
-          <Link to="/buyer-list" className="navbar-link" onClick={toggleMenu}>Your Ratings</Link>
+          <Link to="/buyer-list" className="navbar-link" onClick={toggleMenu}>My Ratings</Link>
         </li>
       </ul>
     </nav>

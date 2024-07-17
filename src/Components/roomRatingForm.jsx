@@ -18,7 +18,7 @@ const ratings = [
 ];
 
 const capitalizeFirstLetter = (string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
 };
 
 const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
@@ -58,11 +58,18 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
   return (
     <>
       <div className="roomRatingForm">
-        <h4>Rate Your Home</h4>
+        <h4>🏠💬⭐ Rate Your Home ⭐💬🏠</h4>
         <form onSubmit={handleSubmit}>
           {Object.entries(rooms).map(([category, roomList]) => (
             <div key={category} className="roomCategory">
               <h5>{capitalizeFirstLetter(category)}</h5>
+              <div className="small">
+                {category === 'commonAreas' && "Rate the common areas of your home, such as the living room, kitchen, and dining room."}
+                {category === 'bathrooms' && "Rate the bathrooms in your home."}
+                {category === 'bedrooms' && "Rate the bedrooms in your home."}
+                {category === 'other' && "Others can include offices, extra bedrooms, bathrooms beyond the usual allotment, basements, garages, and yards."}
+              </div>
+              <br></br>
               {roomList.map((room) => (
                 <div key={room} className="roomInputs">
                   <div className="roomInputWrapper">
@@ -89,17 +96,14 @@ const RoomRatingForm = ({ onSubmit, matchedEntries }) => {
                   )}
                 </div>
               ))}
+              <hr /> {/* Horizontal line between categories */}
             </div>
           ))}
           {isNextEnabled && <button type="submit">Next</button>}
         </form>
       </div>
-      {/* <footer style={{ position: 'fixed', bottom: 0, width: '100%', height: '6.5%', textAlign: 'center', padding: '10px', backgroundColor: '#f9f3e9' }}>
-      © 2023 Your Company Name
-    </footer> */}
     </>
   );
 };
 
 export default RoomRatingForm;
-

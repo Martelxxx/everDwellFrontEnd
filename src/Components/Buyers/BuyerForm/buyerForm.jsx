@@ -126,7 +126,7 @@ const BuyerForm = ({ initialData, matchedEntries, onNext, onSubmit, message, set
   };
 
   return (
-    <div>
+    <div className='mainCon'>
       <div className="buyerForm">
         <h3>
           Rate your new home, {name}!

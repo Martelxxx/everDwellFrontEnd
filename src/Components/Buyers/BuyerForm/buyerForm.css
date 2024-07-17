@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     background-image: url('../../../assets/homebg.png');
+    
 }
 
 .buyerForm {
@@ -123,6 +124,12 @@ body {
     color: red;
   }
 
+  .mainCon {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+  }
+
   .radio-group {
     display: flex;
     gap: 1rem; /* Adjust the gap as needed */
@@ -162,6 +169,12 @@ body {
     background-color: white;
 }
 
+.mainCon {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+  }
+
     .buyerForm {
         width: 50%;
         height: auto;
@@ -169,6 +182,8 @@ body {
         top: 55%;
         justify-content: center;
         font-size: 0.8rem;
+        background: rgba(250, 250, 250, 0.8); 
+        backdrop-filter: blur(10px); 
     }
     .searchForm {
         width: 50%;
@@ -176,6 +191,8 @@ body {
         margin: 10%;
         padding: 40px;
         top: 0;
+        background: rgba(250, 250, 250, 0.8); 
+        backdrop-filter: blur(10px); 
     }
 
     form {
