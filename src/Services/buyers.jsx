@@ -1,7 +1,7 @@
 //Index Route
 const fetchBuyers = async () => {
     try {
-      const response = await fetch('http://http://44.204.232.236:8000/api/buyers/');
+      const response = await fetch('http://44.204.232.236:8000/api/buyers/');
       const buyers = await response.json();
       return buyers;
     } catch (error) {
@@ -12,7 +12,7 @@ const fetchBuyers = async () => {
   // Create Route
   const createBuyer = async (buyer) => {
     try {
-      const response = await fetch('http://http://44.204.232.236:8000/api/buyers/', {
+      const response = await fetch('http://44.204.232.236:8000/api/buyers/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ const fetchBuyers = async () => {
   // Update Route
   const updateBuyer = async (id, buyer) => {
     try {
-      const response = await fetch(`http://http://44.204.232.236:8000/api/buyers/${id}`, {
+      const response = await fetch(`http://44.204.232.236:8000/api/buyers/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const fetchBuyers = async () => {
   // Delete Route
   const deleteBuyer = async (id) => {
     try {
-      const response = await fetch(`http://http://44.204.232.236:8000/api/buyers/${id}`, {
+      const response = await fetch(`http://44.204.232.236:8000/api/buyers/${id}`, {
         method: 'DELETE'
       });
       const deletedBuyer = await response.json();
